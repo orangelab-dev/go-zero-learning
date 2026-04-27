@@ -5,6 +5,7 @@ package logic
 
 import (
 	"context"
+	"fmt"
 
 	"greet/internal/svc"
 	"greet/internal/types"
@@ -30,6 +31,6 @@ func (l *GreetLogic) Greet(req *types.Request) (resp *types.Response, err error)
 	// todo: add your logic here and delete this line
 
 	return &types.Response{
-		Message: "你好" + req.Name,
+		Message: fmt.Sprintf("Hello %s, welcome to go-zero!", req.Name),
 	}, nil
 }
